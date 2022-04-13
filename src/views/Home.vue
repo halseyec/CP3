@@ -8,9 +8,9 @@
     </div>
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a @click="select('equipment')" href="#" class="pure-menu-link">Equipment</a></li>
-        <li class="pure-menu-item"><a @click="select('clothing')" href="#" class="pure-menu-link">Clothing</a></li>
-        <li class="pure-menu-item"><a @click="select('dietary')" href="#" class="pure-menu-link">Deitary</a></li>
+        <li class="pure-menu-item"><a @click="select('people')" href="#" class="pure-menu-link">Equipment</a></li>
+        <li class="pure-menu-item"><a @click="select('places')" href="#" class="pure-menu-link">Clothing</a></li>
+        <li class="pure-menu-item"><a @click="select('things')" href="#" class="pure-menu-link">Deitary</a></li>
       </ul>
     </div>
   </div>
@@ -35,7 +35,7 @@ export default {
     products() {
       let result = [];
       result = this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText) >= 0);
-      if (this.type === 'equipment' || this.type === 'clothing' || this.type === 'dietary') {
+      if (this.type === 'people' || this.type === 'places' || this.type === 'things') {
         return result.filter(product => product.type === this.type);
       }
       else {
